@@ -49,7 +49,6 @@ public class CreateServlet extends HttpServlet {
             m.setCreated_at(currentTime);
             m.setUpdated_at(currentTime);
 
-            em.persist(m);// バリデーションを実行してエラーがあったら新規登録のフォームに戻る
             List<String> errors = MessageValidator.validate(m);
             if(errors.size() > 0) {
                 em.close();
